@@ -7,8 +7,10 @@ public class Main {
         System.out.println("Введите размер массива: ");
         int n = kb.nextInt();
         int[] arr = new int[n];
+        double[] arr1 = new double[n];
         Rand_arr(arr);
         Print_arr(arr);
+
         System.out.printf("Сумма элементов массива составляет: %d\n" +
                 "Среднее значение элементов массива составляет: %.2f\n" +
                 "Минимальное значение элемента массива составляет: %d\n" +
@@ -20,7 +22,9 @@ public class Main {
         ShiftLeft(arr, left);
         System.out.println();
         Shiftright(arr, right);
-
+        System.out.println();
+        Rand_arr(arr1);
+        Print_arr(arr1);
     }
 
     static void ShiftLeft(int[] arr, int n) {
@@ -86,6 +90,20 @@ public class Main {
     }
 
     static void Print_arr(int[] arr) {
+        System.out.print("Значения элементов массива: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    //__________________________________Перегруженные массивы________________________________________
+    static void Rand_arr(double[] arr) {
+        Random rand = new Random(0);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextDouble(10);
+        }
+    }
+    static void Print_arr(double[] arr) {
         System.out.print("Значения элементов массива: ");
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
